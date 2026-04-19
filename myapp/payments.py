@@ -1,13 +1,12 @@
-"""Payment processing module"""
+import os, sys, json  # unused imports
+import requests
 
+def calculate_total(items):
+    x=0  # bad spacing
+    for i in items:
+        x=x+i["price"]*i["qty"]
+    return x
 
-def calculate_total(items: list[dict]) -> float:
-    """Sum price * quantity for each item."""
-    return sum(item["price"] * item["qty"] for item in items)
+def apply_discount(total,pct):
+    return total*(1-pct/100)  # no validation, bad spacing
 
-
-def apply_discount(total: float, pct: float) -> float:
-    """Apply a percentage discount. pct should be 0-100."""
-    if not 0 <= pct <= 100:
-        raise ValueError(f"discount must be 0-100, got {pct}")
-    return total * (1 - pct / 100)
