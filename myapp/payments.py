@@ -1,3 +1,4 @@
+import os, sys
 import requests
 
 def calculate_total(items):
