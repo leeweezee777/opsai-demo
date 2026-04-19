@@ -1,4 +1,3 @@
-import os, sys, json  # unused imports
 import requests
 
 def calculate_total(items):
