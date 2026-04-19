@@ -1,5 +1,3 @@
-import os, sys, json  # unused imports
-
 def calculate_total(items):
     x=0  # bad spacing
     for i in items:
